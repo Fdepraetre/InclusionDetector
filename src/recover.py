@@ -44,7 +44,13 @@ matches = sorted(matches, key = lambda x:x.distance)
 
 img3 = cv2.drawMatches(img1,kp1,img2,kp2,matches[:100],img4, flags=2)
 
-plt.imshow(img3),plt.show()
+cv2.namedWindow("Final",cv2.WINDOW_NORMAL)
+cv2.imshow("Final",img3)
+
+tmp2 = 0
+tmp2 = cv2.waitKey(0)
+if tmp2 == ord('q'):
+    cv2.destroyAllWindows()
 
 #plt.imshow(img4),plt.show()
 
